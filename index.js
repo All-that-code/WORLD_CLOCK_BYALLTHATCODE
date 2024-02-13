@@ -54,22 +54,24 @@ function updateCity(event) {
     <div>
       <h2>${cityName}</h2>
       <div class="date">${cityDate}</div>
+      <div class="link"><a href="index.html">Back to cities</a></div>
+      
     </div>
     <div class="time">${cityTime}</div>
     </div>
-        <img class="message"
+    <img class="message"
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/115/219/original/time-for-coffee.png?1707836255"
             alt="clock" />
         <img class="coffee"
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/115/218/original/coffee.png?1707836245"
             alt="message" />
-    </div>
     <footer>
         <p>Coded by <a href="https://github.com/All-that-code" target=_blank>Amaia
                 Arbizu</a>
             and open sourced on <a href="https://github.com/All-that-code/WORLD-CLOCK-ALL-THAT-CODE"
                 target="_blank">GitHub</p></a>
-    </footer>`;
+    </footer>
+    `;
 }
 
 updateDate();
