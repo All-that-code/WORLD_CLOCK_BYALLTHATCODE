@@ -1,0 +1,111 @@
+body {
+  background-color: #f2f1f0;
+}
+
+h1 {
+  font-family: "Anton", sans-serif;
+  text-align: center;
+  background-color: white;
+  width: 190px;
+  margin: 100px auto 30px;
+  border-radius: 15px;
+  border: 1px solid #191919;
+  box-shadow: 10px 10px 0 0 #191919;
+}
+
+h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 30px;
+  margin: 5px 15px 0 5px;
+}
+
+.city-selection {
+  font-family: "Anton", sans-serif;
+  text-align: left;
+  display: block;
+  font-size: 30px;
+  width: 600px;
+  padding-left: 20px;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 1px solid #191919;
+  box-shadow: 10px 10px 0 0 #191919;
+}
+
+.city {
+  background-color: #b2c2ed;
+}
+.city2 {
+  background-color: #f4e784;
+}
+.city3 {
+  background-color: #eab478;
+}
+
+.city,
+.city2,
+.city3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 570px;
+  border-radius: 15px;
+  border: 1px solid #191919;
+  box-shadow: 10px 10px 0 0 #191919;
+}
+
+.time {
+  font-family: "Anton", sans-serif;
+  font-size: 50px;
+}
+
+.date {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  margin-left: 5px;
+}
+
+.message {
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  position: relative;
+  top: -45px;
+  right: -140px;
+  transition: all 800ms ease-in-out;
+}
+
+.message:hover {
+  transform: scale(1.2);
+}
+
+.coffee {
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: -140px;
+  right: -250px;
+  transition: all 700ms ease-in-out;
+}
+
+.coffee:hover {
+  transform: translate(0, -30px);
+}
+
+footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 300;
+  margin-top: -195px;
+  margin-left: -200px;
+}
+
+a {
+  text-decoration: none;
+  color: #191919;
+  font-weight: 500;
+}
