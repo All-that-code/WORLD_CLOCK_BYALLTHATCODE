@@ -60,7 +60,13 @@ function updateCity(event) {
         <img class="coffee"
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/115/218/original/coffee.png?1707836245"
             alt="message" />
-    </div>`;
+    </div>
+    <footer>
+        <p>Coded by <a href="https://github.com/All-that-code" target=_blank>Amaia
+                Arbizu</a>
+            and open sourced on <a href="https://github.com/All-that-code/WORLD-CLOCK-ALL-THAT-CODE"
+                target="_blank">GitHub</p></a>
+    </footer>`;
 }
 
 updateDate();
