@@ -1,46 +1,70 @@
 function updateDate() {
   let newYorkElement = document.querySelector("#new-york");
-  let newYorkDateElement = newYorkElement.querySelector("#date");
-  let newYorkTimeElement = newYorkElement.querySelector("#time");
+  if (newYorkElement) {
+    let newYorkDateElement = newYorkElement.querySelector("#date");
+    let newYorkTimeElement = newYorkElement.querySelector("#time");
 
-  newYorkDateElement.innerHTML = moment()
-    .tz("America/New_York")
-    .format("MMMM Do, YYYY");
+    newYorkDateElement.innerHTML = moment()
+      .tz("America/New_York")
+      .format("MMMM Do, YYYY");
 
-  newYorkTimeElement.innerHTML = moment()
-    .tz("America/New_York")
-    .format("hh:mm:ss A");
+    newYorkTimeElement.innerHTML = moment()
+      .tz("America/New_York")
+      .format("hh:mm:ss A");
+  }
 
   let tokyoElement = document.querySelector("#tokyo");
-  let tokyoDateElement = tokyoElement.querySelector("#date");
-  let tokyoTimeElement = tokyoElement.querySelector("#time");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector("#date");
+    let tokyoTimeElement = tokyoElement.querySelector("#time");
 
-  tokyoDateElement.innerHTML = moment()
-    .tz("Asia/Tokyo")
-    .format("MMMM Do, YYYY");
+    tokyoDateElement.innerHTML = moment()
+      .tz("Asia/Tokyo")
+      .format("MMMM Do, YYYY");
 
-  tokyoTimeElement.innerHTML = moment().tz("Asia/Tokyo").format("hh:mm:ss A");
+    tokyoTimeElement.innerHTML = moment().tz("Asia/Tokyo").format("hh:mm:ss A");
+  }
 
   let amsterdamElement = document.querySelector("#amsterdam");
-  let amsterdamDateElement = amsterdamElement.querySelector("#date");
-  let amsterdamTimeElement = amsterdamElement.querySelector("#time");
+  if (amsterdamElement) {
+    let amsterdamDateElement = amsterdamElement.querySelector("#date");
+    let amsterdamTimeElement = amsterdamElement.querySelector("#time");
 
-  amsterdamDateElement.innerHTML = moment()
-    .tz("Europe/Amsterdam")
-    .format("MMMM Do, YYYY");
+    amsterdamDateElement.innerHTML = moment()
+      .tz("Europe/Amsterdam")
+      .format("MMMM Do, YYYY");
 
-  amsterdamTimeElement.innerHTML = moment()
-    .tz("Europe/Amsterdam")
-    .format("hh:mm:ss A");
+    amsterdamTimeElement.innerHTML = moment()
+      .tz("Europe/Amsterdam")
+      .format("hh:mm:ss A");
+  }
+}
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1].toUpperCase();
+  let cityTime = moment().tz(cityTimeZone).format("hh:mm:ss A");
+  let cityDate = moment().tz(cityTimeZone).format("MMMM Do, YYYY");
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+  <div class="city">
+    <div>
+      <h2>${cityName}</h2>
+      <div class="date">${cityDate}</div>
+    </div>
+    <div class="time">${cityTime}</div>
+    </div>
+        <img class="message"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/115/219/original/time-for-coffee.png?1707836255"
+            alt="clock" />
+        <img class="coffee"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/115/218/original/coffee.png?1707836245"
+            alt="message" />
+    </div>`;
 }
 
 updateDate();
 setInterval(updateDate, 1000);
 
-function updateCity(event) {
-  let cityTimeZone = event.target.value;
-}
-
 let citiesSelectElement = document.querySelector("#select-city");
-
 citiesSelectElement.addEventListener("change", updateCity);
