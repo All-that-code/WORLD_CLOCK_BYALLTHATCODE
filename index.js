@@ -42,6 +42,9 @@ function updateDate() {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1].toUpperCase();
   let cityTime = moment().tz(cityTimeZone).format("hh:mm:ss A");
   let cityDate = moment().tz(cityTimeZone).format("MMMM Do, YYYY");
